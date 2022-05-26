@@ -13,4 +13,12 @@ class Post extends Model
     public function categories(){
         return $this->belongsToMany("App\Model\Category");
     }
+
+    protected $fillable=[
+            "user_id",
+            "title", 
+            "author", 
+            "content", 
+            "image_url"
+    ];
 }
