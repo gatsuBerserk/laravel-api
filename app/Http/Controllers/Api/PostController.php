@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post =Post::all(); 
+        $post =Post::paginate(5); 
         return response()->json(
             [
                 "success" => true, 
@@ -43,7 +43,15 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post =Post::findOrFail($id);
+        // return response()->json($post); -> metodo di uso comune 
+        return response()->json(
+            [
+                "success" => true, 
+                // "results" =>[$post], oppure--->
+                "results" =>$post,
+            ]
+            );
     }
 
     /**
@@ -66,6 +74,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::destroy($id); 
+        return response("", 204); 
+
     }
 }
