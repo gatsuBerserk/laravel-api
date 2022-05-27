@@ -16,7 +16,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        // Visualizzazione e modifica post solo dell'account loggato
         $posts= Post::where("user_id", Auth::user()->id)->paginate(10);
         return view("admin.posts.index", compact("posts"));
     }
@@ -40,9 +41,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "user_id"=> "required",
             "title" => "required|max:100|min:4",
-            "author"=> "required",
             "content" => "required|max:250|min:10",
             "image_url" => "required",
         ]);
