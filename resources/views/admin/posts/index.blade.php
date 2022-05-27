@@ -3,6 +3,13 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
+        @if(session('deleted-message'))
+                <div class="col-12">
+                    <div class="alert alert-warning">
+                        {{session('deleted-message')}}
+                    </div>
+                </div>
+            @endif
     @foreach ($posts as $post)
     
         <div class="col-4">
