@@ -74,9 +74,10 @@
 
         <main class="py-4">
             @yield('content')
+            @yield("guest")
         </main>
+
         
     </div>
-    @yield("script-front")
 </body>
 </html>

@@ -12,7 +12,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ route('admin.home') }}">Home di {{Auth::user()["name"]}} </a>
+                        <a href="{{ route('admin.posts.index') }}">Home di {{Auth::user()["name"]}} </a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -37,7 +37,10 @@
                          BoolTwit
                      </h1>
                  </div>
+                 <a class="btn btn-dark" href="{{url("/home")}}">Visualizza post</a>
             </div>
+            
         </div>
+        
     </body>
 </html>

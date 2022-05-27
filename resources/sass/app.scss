@@ -16,6 +16,9 @@ html, body {
     margin: 0;
 }
 
+.full-height {
+    height: 100vh;
+}
 
 .flex-center {
     align-items: center;
@@ -25,7 +28,6 @@ html, body {
 
 .position-ref {
     position: relative;
-    height: 50px;
 }
 
 .top-right {
