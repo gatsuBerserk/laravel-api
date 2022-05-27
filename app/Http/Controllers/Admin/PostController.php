@@ -114,7 +114,8 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-
-        return redirect()->route('admin.posts.index')->with('deleted-message', "$post->title è stato eliminato con successo dalla lista dei post");
+        
+        return redirect()->route('admin.posts.index');
+        // ->with('deleted-message', "$post->title è stato eliminato con successo dalla lista dei post");
     }
 }

@@ -13,11 +13,11 @@
             <div class="col-12 text-end">
                 <a class="btn btn-warning" href="{{route("admin.posts.edit", $post)}}">Modifica</a>
                 <div>
-                     <form action="{{route("admin.posts.destroy", $post)}}" method="POST" class="post-form-destroyer" post-title="{{$post->title}}">
+                     <form action="{{route("admin.posts.destroy", $post->id)}}" method="POST" class="delete-form" post-title="{{$post->title}}">
                         @csrf
-                        @method('DELETE')
+                        @method("DELETE")
 
-                        <a class="btn btn-danger" type="submit" >Elimina</a>
+                        <button class="btn btn-danger" type="submit" >Elimina</button>
                     </form>
                 </div>
             </div>
